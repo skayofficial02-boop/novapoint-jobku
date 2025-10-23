@@ -1,0 +1,216 @@
+/* === Global & Tata Letak Dasar === */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5; /* Abu-abu sangat muda */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* Penting agar nav-bar menyatu */
+}
+
+.hidden {
+    display: none;
+}
+
+/* === Navigasi (Biru Utama) === */
+nav {
+    background-color: #007bff; /* Biru primer */
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#notification-bell {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#logout-button {
+    background-color: #dc3545; /* Merah untuk logout */
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+/* === Halaman Login === */
+#login-page {
+    padding: 40px;
+    text-align: center;
+}
+
+#login-page h1 {
+    color: #007bff; /* Biru */
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* === Konten Halaman Aplikasi === */
+/* Memberi padding untuk semua area konten di bawah nav */
+#owner-view,
+#worker-view {
+    padding: 25px;
+}
+/* Menargetkan H2 "Semua Pekerjaan" */
+#app-page > h2 {
+    font-size: 22px;
+    color: #0056b3; /* Biru lebih gelap */
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin: 20px 25px 0 25px;
+}
+/* Menargetkan daftar "Semua Pekerjaan" */
+#all-job-list {
+    padding: 15px 25px 25px 25px;
+}
+
+
+/* === Modul Form (Input) === */
+.module {
+    background-color: #fcfcfc;
+    border: 1px solid #e9e9e9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.module input[type="text"],
+.module input[type="number"],
+.module input[type="datetime-local"],
+.module select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px; /* Spasi antar input */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Mencegah padding merusak lebar */
+    font-size: 14px;
+}
+
+.module button,
+#login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Biru primer */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.module button:hover,
+#login-button:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat di-hover */
+}
+
+/* === Laporan Grid (Owner) === */
+.report-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.report-card {
+    background-color: #f0f8ff; /* Biru sangat muda */
+    padding: 20px;
+    border: 1px solid #bde0ff; /* Border biru muda */
+    border-radius: 8px;
+}
+
+.report-card h3 {
+    margin: 0 0 10px 0;
+    color: #555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.report-card p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #007bff; /* Biru */
+    margin: 0;
+}
+
+/* === Daftar Pekerjaan (Job List) === */
+.job-list .job-item {
+    border: 1px solid #ddd;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    /* Aksen biru di kiri */
+    border-left: 5px solid #007bff; 
+    transition: box-shadow 0.2s;
+}
+.job-list .job-item:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Job Selesai */
+.job-item.completed {
+    background-color: #f9f9f9;
+    border-left-color: #28a745; /* Hijau untuk selesai */
+    opacity: 0.8;
+}
+
+.job-item.completed strong {
+    color: #28a745; /* Hijau */
+}
+
+.job-item strong {
+    color: #0056b3; /* Biru gelap */
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.job-item .details {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+/* Tombol "Tandai Selesai" */
+.job-item button {
+    width: auto;
+    background-color: #28a745; /* Hijau */
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.job-item button:hover {
+    background-color: #218838;
+}
